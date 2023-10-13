@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "react-jsx",
+    "lib": ["dom", "esnext"],
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "./src",
+  ]
+}

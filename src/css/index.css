@@ -1,0 +1,94 @@
+/* COLORS */
+
+:root {
+  --surface: #fff;
+  --surface-1: #f6f6f6;
+  --surface-2: #e7e7e7;
+  --on-surface: #292929;
+  --border-color: #b3b3b3;
+  --primary-accent: #0F72BD;
+  --primary-accent-light: #e2f0fc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --surface: #292929;
+    --surface-1: #3d3d3d;
+    --surface-2: #454545;
+    --on-surface: #fff;
+    --border-color: #757575;
+    --primary-accent: #44A9EC;
+    --primary-accent-light: #2c4964;
+  }
+}
+
+*{
+  box-sizing: border-box;
+}
+
+/* FOCUS RING */
+
+button:focus,
+input:focus,
+[tabindex]:focus {
+  outline: 2px dotted var(--primary-accent);
+}
+
+button:-moz-focusring {
+  outline: 2px dotted var(--primary-accent);
+}
+
+/* BODY & HTML */
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--surface);
+  color: var(--on-surface);
+  font: 400 1rem / 1.5 system-ui,-apple-system, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* NORMALIZE */
+
+main {
+  display: block;
+}
+
+button,
+input {
+  font-family: inherit;
+  font-size: 100%; 
+  line-height: inherit; 
+  margin: 0;
+  color: inherit;
+  overflow: visible;
+}
+
+button {
+  text-transform: none;
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+  font-weight: 600;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@tailwind utilities;
