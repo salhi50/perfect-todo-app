@@ -3,8 +3,15 @@ import tasksReducer, { ADD_TASK, DELETE_TASK, TOGGLE_COMPLETE_TASK, UPDATE_TASK_
 import { type FilterBy } from "./types";
 
 const App: React.FC = () => {
-  const [tasks, dispatch] = React.useReducer(tasksReducer, []);
+  const [tasks, dispatch] = React.useReducer(tasksReducer, undefined, function () {
+    const localTasks = localStorage.getItem("tasks");
+    return localTasks ? JSON.parse(localTasks) : []
+  });
   const [filterBy, setFilterBy] = React.useState<FilterBy>("all");
+
+  React.useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const completedTasks = tasks.filter(task => task.completed);
   const unCompletedTasks = tasks.filter(task => !task.completed);
